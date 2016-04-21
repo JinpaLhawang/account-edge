@@ -1,4 +1,4 @@
-package com.jambudvipa;
+package com.jinpalhawang.jambudvipa;
 
 import java.net.URI;
 

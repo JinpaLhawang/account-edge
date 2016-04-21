@@ -1,4 +1,4 @@
-package com.jambudvipa;
+package com.jinpalhawang.jambudvipa;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

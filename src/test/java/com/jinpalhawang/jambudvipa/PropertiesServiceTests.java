@@ -6,10 +6,10 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.jinpalhawang.jambudvipa.PropertiesService;
+import com.jinpalhawang.jambudvipa.AccountService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = PropertiesService.class)
+@SpringApplicationConfiguration(classes = AccountService.class)
 @WebAppConfiguration
 public class PropertiesServiceTests {
 

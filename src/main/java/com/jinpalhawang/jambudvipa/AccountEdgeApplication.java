@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableCircuitBreaker
-public class PropertiesEdgeApplication {
+public class AccountEdgeApplication {
 
   @Autowired
-  private PropertiesService propertiesService;
+  private AccountService accountService;
 
-  private static final Logger log = LoggerFactory.getLogger(PropertiesEdgeApplication.class);
+  private static final Logger log = LoggerFactory.getLogger(AccountEdgeApplication.class);
 
   @RequestMapping("/")
   public String properties() {
-    String response = propertiesService.properties();
+    String response = accountService.helloAccount();
     log.info(response);
     return response;
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(PropertiesEdgeApplication.class, args);
+    SpringApplication.run(AccountEdgeApplication.class, args);
   }
 
 }

@@ -9,14 +9,14 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
-public class PropertiesService {
+public class AccountService {
 
-  private static final Logger log = LoggerFactory.getLogger(PropertiesService.class);
+  private static final Logger log = LoggerFactory.getLogger(AccountService.class);
 
   @HystrixCommand(fallbackMethod = "fallback")
-  public String properties() {
+  public String helloAccount() {
     RestTemplate restTemplate = new RestTemplate();
-    URI uri = URI.create("http://localhost:8090");
+    URI uri = URI.create("http://localhost:8091");
 
     String response = "From Middle: " + restTemplate.getForObject(uri, String.class);
     log.info(response);

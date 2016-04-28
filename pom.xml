@@ -7,12 +7,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.jinpalhawang.jambudvipa</groupId>
-  <artifactId>properties-edge</artifactId>
+  <artifactId>account-edge</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>properties-edge</name>
-  <description>Properties Service in Edge Tier</description>
+  <name>account-edge</name>
+  <description>Account Service in Edge Tier</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -28,13 +28,13 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-hystrix</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
     <dependency>

@@ -48,8 +48,8 @@ class AccountEdgeRestController {
   private AccountService accountService;
 
   @RequestMapping("/")
-  public String properties() {
-    String response = accountService.helloAccount();
+  public String account() {
+    String response = accountService.account();
     log.info(response);
     return response;
   }

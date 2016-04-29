@@ -17,10 +17,9 @@ mvn package
 ## Running
 
 ```
-mongod --dbpath ~/mongodb/data/db/
 mvn spring-boot:run
 ```
 
 ### Requesting Data
 
-http://localhost:8080
+http://localhost:8092

@@ -6,12 +6,12 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.jinpalhawang.jambudvipa.AccountService;
+import com.jinpalhawang.jambudvipa.AccountEdgeApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = AccountService.class)
+@SpringApplicationConfiguration(classes = AccountEdgeApplication.class)
 @WebAppConfiguration
-public class PropertiesServiceTests {
+public class AccountEdgeApplicationTests {
 
   @Test
   public void contextLoads() {

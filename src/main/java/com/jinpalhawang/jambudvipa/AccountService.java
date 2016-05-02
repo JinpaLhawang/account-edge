@@ -25,7 +25,7 @@ public class AccountService {
   @HystrixCommand(fallbackMethod = "fallback")
   public String account() {
     RestTemplate restTemplate = new RestTemplate();
-    URI uri = URI.create("http://localhost:8091"); // TODO: Replace with ribbon call
+    URI uri = URI.create("http://localhost:8090"); // TODO: Replace with ribbon call
 
     String response = responsePrefix + ": " + restTemplate.getForObject(uri, String.class);
     log.info(response);
@@ -39,4 +39,5 @@ public class AccountService {
 
     return response;
   }
+
 }

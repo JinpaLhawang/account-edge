@@ -26,7 +26,7 @@ public class AccountEdgeApplication {
     final SpringApplication app = new SpringApplication(AccountEdgeApplication.class);
     app.setLogStartupInfo(false);
     app.run(args);
-    log.info(AccountEdgeApplication.class.getSimpleName() + " started...");
+    log.info(AccountEdgeApplication.class.getSimpleName() + " started.");
   }
 
 }

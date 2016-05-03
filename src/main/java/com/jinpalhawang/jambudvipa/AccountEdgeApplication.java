@@ -43,9 +43,9 @@ class AccountEdgeRestController {
   private AccountService accountService;
 
   @RequestMapping("/")
-  public String account() {
-    String response = accountService.account();
-    log.info(response);
+  public Account getAccount() {
+    final Account response = accountService.getAccount();
+    log.info(response.toString());
     return response;
   }
 

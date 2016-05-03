@@ -1,9 +1,8 @@
 package com.jinpalhawang.jambudvipa;
 
 import java.net.URI;
+import java.util.HashMap;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
@@ -14,30 +13,25 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @RefreshScope
 public class AccountService {
 
-  private static final Logger log = LoggerFactory.getLogger(AccountService.class);
+  @Value("${fallback.account.firstname}")
+  private String fallbackAccountFirstName;
 
-  @Value("${responsePrefix}")
-  private String responsePrefix;
-
-  @Value("${fallbackResponse}")
-  private String fallbackResponse;
+  @Value("${fallback.account.lastname}")
+  private String fallbackAccountLastName;
 
   @HystrixCommand(fallbackMethod = "fallback")
-  public String account() {
-    RestTemplate restTemplate = new RestTemplate();
-    URI uri = URI.create("http://localhost:8090"); // TODO: Replace with ribbon call
+  public Account getAccount() {
+    final RestTemplate restTemplate = new RestTemplate();
+    // TODO: Replace with ribbon call
+    final URI uri = URI.create("http://localhost:8090/accounts/search/findByFirstName?firstName=Jinpa");
 
-    String response = responsePrefix + ": " + restTemplate.getForObject(uri, String.class);
-    log.info(response);
+    final Account account = restTemplate.getForObject(uri, Account.class);
 
-    return response;
+    return account;
   }
 
-  public String fallback() {
-    String response = fallbackResponse;
-    log.info(response);
-
-    return response;
+  public Account fallback() {
+    return new Account(fallbackAccountFirstName, fallbackAccountLastName, new HashMap<String, String>());
   }
 
 }

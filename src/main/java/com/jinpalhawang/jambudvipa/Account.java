@@ -2,6 +2,9 @@ package com.jinpalhawang.jambudvipa;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
 
   private String firstName;
